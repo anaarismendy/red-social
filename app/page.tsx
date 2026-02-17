@@ -98,9 +98,7 @@ function PostCard({
 
         {/* Caption */}
         <p className="mt-2 text-foreground">
-          <span className="font-semibold">
-            {post.user?.username || "default_user"}
-          </span>{" "}
+          <span className="font-semibold">{post.user?.username || "default_user"}</span>{" "}
           <span className="text-foreground/80">{post.caption}</span>
         </p>
       </div>
@@ -135,6 +133,7 @@ export default function Home() {
       if (error) {
         console.error("Error al obtener los posts:", error);
       } else {
+        console.log("Posts obtenidos:", data);
         setPosts(data);
       }
     };
